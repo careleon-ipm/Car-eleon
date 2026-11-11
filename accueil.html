@@ -1,0 +1,306 @@
+<!DOCTYPE html> <!-- Informations de la page -->
+<html lang="fr"> <!-- Définit la langue de la page en français -->
+
+
+ <head> 
+   <!-- Définir l'encodage de la page -->
+   <meta charset="UTF-8">
+
+   <!-- Adapte la largeur de la page à la taille de l'écran -->
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <!-- Titre affiché dans l'onglet du navigateur -->
+   <title>Car-éléon | Accueil</title> 
+
+   <!-- Lier à ma page bootstrap -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+   <!-- Ajouter un icone achat -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+   <!-- Lier à ma page style css -->
+   <link href="css/style.css" type="text/css" rel="stylesheet">
+ </head>
+  
+
+
+ <!-- Contenu visible de la page -->
+ <!-- Identifie le haut de la page et lance l'horloge au chargement.
+  À la sortie de la page, appelle la fonction qui arrête son actualisation. -->
+ <body id="haut" onload="UpdateClock()" onunload="KillClock()">
+    <!-- En-tête contenant le menu de navigation -->
+    <header>
+      <nav class="navbar navbar-expand-lg bg-black navbar-dark">
+       <div class="container-fluid px-4">
+ 
+
+         <!-- Logo cliquable qui renvoie à l'accueil -->
+         <a href="accueil.html">
+           <img src="images/logocareleon.png" 
+            alt="Logo Car-éléon - Accueil" 
+            width="100" 
+            height="50" 
+            class="object-fit-contain">
+         </a>
+
+
+          <!-- Bouton burger (mobile) -->
+          <button class="navbar-toggler" 
+            type="button" 
+            data-bs-toggle="collapse" 
+            data-bs-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+
+          <!-- Contient les liens de navigation générés par JavaScript -->
+          <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav mx-auto gap-lg-3" id="liens-menu"></ul>
+         </div>
+
+
+         <!-- Regroupe le bouton du mode sombre et l'horloge -->
+         <form id="theClock" class="ms-3 mb-0 d-flex align-items-center">
+           <button type="button"
+            id="darkModeToggle"
+            class="btn btn-sm btn-outline-light me-2"
+            onclick="toggleDisplayMode()"
+            aria-label="Activer le mode sombre"
+            aria-pressed="false">🌙</button>
+
+
+           <!-- Horloge positionnée à droite -->
+           <!-- Affiche l'heure actualisée par JavaScript -->
+           <input type="text"
+            id="theTime"
+            class="form-control-plaintext text-light text-end p-0 m-0"
+            value="--:--:--"
+            size="8"
+            readonly>
+         </form>
+
+       </div>
+     </nav>
+   </header>
+
+
+
+
+   <!-- Section 1 Banniere : bannière de présentation de Car-éléon -->  
+   <main> 
+     <section class="banniere banniere-accueil d-flex align-items-center text-white arrondi" aria-labelledby="titre-accueil">
+
+       <!-- Regroupe le titre, le slogan, la description et les boutons -->
+       <div class="texte-banniere d-flex flex-column align-items-start ms-3 ms-md-5">
+
+
+         <!-- Titre principal de la page -->
+         <h1 id="titre-accueil">Car-éléon</h1>
+
+
+         <!-- Slogan de l'entreprise -->
+         <h2 class="slogan">Votre voiture, votre style.</h2>
+
+
+         <!-- Présentation du concept de Car-éléon -->
+         <p class="description-banniere">Changez de style en un instant grâce à notre technologie innovante de carrosserie personnalisable. <br> Adaptez votre voiture à vos envies, votre humeur et votre personnalité.</p>
+
+
+         <!-- Redirige vers la présentation du produit -->
+         <a href="produit.html#video" class="btn btn-technologie mb-2">
+           Découvrir notre technologie
+         </a>
+
+
+         <!-- Redirige vers la page de contact pour commander le boîtier -->
+         <a href="contact.html" class="btn btn-achat">
+            <!-- Icône représentant un panier d'achat avec bootstrap-->
+            <i class="bi bi-cart3"></i>
+            Commander le boîtier
+         </a>
+
+       </div>
+     </section>
+
+
+
+      <!-- Section 2 : Les trois avantages du produit Car-éléon -->
+      <section class="troisavantages text-white text-center py-5"
+        aria-labelledby="titre-avantages">
+
+       <!-- Titre de la section -->
+       <h2 id="titre-avantages" class="w-100 mb-4">
+         Pourquoi choisir Car-éléon ?
+       </h2>
+
+
+       <!-- Conteneur Bootstrap : 3 colonnes adaptables -->
+       <div class="container">
+         <div class="row justify-content-around">
+
+           <!-- Avantage 1 -->
+           <div class="col-12 col-md-4 mb-4">
+             <div class="avantage carte-avantage d-flex flex-column align-items-center h-100">
+               <!-- Illustration de l'avantage -->
+               <img src="images/peinture.png"
+               alt="Peinture"
+               class="img-fluid mb-3">
+               <!-- Texte qui présente l'avantage -->
+               <p>Changer la couleur en un clic</p>
+             </div>
+           </div>
+
+
+           <!-- Avantage 2 -->
+           <div class="col-12 col-md-4 mb-4">
+             <div class="avantage carte-avantage d-flex flex-column align-items-center h-100">
+               <!-- Illustration de l'avantage -->
+               <img src="images/usb.png"
+               alt="USB"
+               class="img-fluid mb-3">
+               <!-- Texte qui présente l'avantage -->
+               <p>Simple à installer (USB / Bluetooth)</p>
+             </div>
+           </div>
+
+
+           <!-- Avantage 3 -->
+           <div class="col-12 col-md-4 mb-4">
+             <div class="avantage carte-avantage d-flex flex-column align-items-center h-100">
+               <!-- Illustration de l'avantage -->
+               <img src="images/coeur.png"
+               alt="Cœur"
+               class="img-fluid mb-3">
+               <!-- Texte qui présente l'avantage -->
+               <p>Pour les passionnés d'automobiles</p>
+             </div>
+           </div>
+
+         </div>
+       </div>
+     </section>    
+   
+
+
+     <!-- Section 3 Présente le concept de personnalisation des couleurs -->
+     <!-- En diaporama --> 
+     <section class="couleurs-acceuil text-center py-5"
+       aria-labelledby="titre-couleurs">
+       <div class="container">
+
+         <!-- Titre de la section -->
+         <h2 id="titre-couleurs">Découvrez une nouvelle façon de rouler</h2>
+         <!-- Texte de présentation du concept -->
+         <p class="mb-4">
+           Car-éléon, c'est la liberté de personnaliser votre voiture selon vos envies, à chaque instant. 
+         </p>
+
+
+         <!-- Invite l'utilisateur à cliquer sur l'image pour changer sa couleur -->
+         <div class="alert text-center mt-4 mx-auto"
+           role="note">
+           <strong>Cliquez sur la voiture pour découvrir les différentes couleurs !</strong>
+         </div>
+       
+         
+         <!-- Image initiale que JavaScript remplace lors des clics -->
+         <img src="images/vbleu.png"
+          alt="Voiture bleue Car-éléon"
+          id="diapo"
+         class="img-fluid diaporama-voiture">
+       </div>
+     </section>
+
+
+
+     <!-- Section 4 Notre vision --> 
+     <section class="notre-vision py-5" aria-labelledby="titre-vision">
+       <div class="container">
+
+         <!-- le texte et l'image sur deux colonnes (sur grand écran) -->
+         <div class="row align-items-center g-4">
+
+           <!-- Colonne de gauche : présentation de la vision -->
+           <div class="col-12 col-lg-6">
+
+             <!-- Petit titre de la section -->
+             <p class="surtitre-vision">NOTRE VISION</p>
+
+             <!-- Titre principal présentant l'ambition du projet -->
+             <h2 id="titre-vision">
+               Et si votre voiture reflétait votre personnalité ?
+             </h2>
+
+             <p>
+               Chez Car-éléon, nous imaginons une nouvelle façon
+               de vivre l’automobile. Notre ambition est d'offrir à chacun la liberté de personnaliser l’apparence de son véhicule grâce à une technologie de carrosserie aux couleurs changeantes.
+             </p>
+
+             <p>
+               Parce que chaque conducteur est unique, nous souhaitons rendre la personnalisation plus intuitive, créative et accessible.
+             </p>
+
+
+             <!-- Accès à la page Équipe -->
+             <a href="equipe.html" class="btn btn-vision mt-2">
+               <!-- Icône représentant les membres de l'équipe avec bootstrap-->
+               <i class="bi bi-people-fill"></i>
+               Rencontrer notre équipe               
+             </a>
+           </div>
+
+
+           <!-- Colonne de droite : illustration du concept -->
+           <div class="col-12 col-lg-6">
+              <!-- Image illustrant la personnalisation des voitures -->
+             <img
+              src="images/futuriste.png"
+              alt="Voiture illustrant le concept de personnalisation Car-éléon"
+              class="img-fluid image-vision">
+           </div>
+
+         </div>
+       </div>
+     </section>
+   </main> 
+   <!-- Fin du contenu principal -->
+
+
+
+
+    <!-- Pied de page commun à toutes les pages -->
+    <footer class="footer bg-black text-white py-4 mt-0">
+
+     <div class="container">
+
+        <div class="row align-items-center">
+
+          <!-- Informations Car-éléon à gauche -->
+          <div class="col-12 text-center mb-3 mb-lg-0">
+            <p class="mb-2">
+               © 2025 Car-éléon | Tous droits réservés.
+            </p>
+
+            <p class="mb-0">
+             Votre voiture, votre style
+            </p>
+
+         </div>
+
+         <!-- Bouton retour en haut -->
+         <div class="text-center mt-4">
+            <a href="#haut" class="btn btn-retour-haut">
+              ↑ Retour en haut
+            </a>
+         </div>
+
+       </div>
+     </div> 
+   </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts/script.js"></script>
+
+ </body>
+</html>
