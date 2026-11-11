@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // Nihad - Menu - LISTE DES PAGES DU SITE 
 // tableau qui contient les différentes pages du site
 const pages = [
-  { fichier: "accueil.html",     titre: "Accueil" },
+  { fichier: "index.html",     titre: "Accueil" },
   { fichier: "produit.html",     titre: "Produit" },
   { fichier: "equipe.html",      titre: "Équipe" },
   { fichier: "faq.html",         titre: "FAQ" },
@@ -76,8 +76,8 @@ const pages = [
 ];
 
 // On récupère le nom du fichier de la page actuellement ouverte.
-// Si aucun nom n'est trouvé, "accueil.html" par défaut.
-const pageActuelle = location.pathname.split("/").pop() || "acceuil.html";
+// Si aucun nom n'est trouvé, "accueil.html" par défaut (wala: j'ai renommé index pour que ça redirige mieux via Github).
+const pageActuelle = location.pathname.split("/").pop() || "index.html";
 
 // Nihad - CRÉATION DES LIENS DU MENU 
 const liens = pages.map(function (page) {
