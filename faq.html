@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<!-- Définit la langue de la page en français -->
+<html lang="fr">
+
+
+ <head>
+   <!-- Définir l'encodage de la page -->
+   <meta charset="UTF-8">
+
+   <!-- Adaptation de la page aux écrans mobiles "BOOSTRAST" --> 
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <!-- Titre affiché dans l'onglet du navigateur -->
+   <title>Car-éléon | FAQ</title> 
+
+   <!-- Lier à ma page bootstrap -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+   <!-- Lier à ma page css -->
+   <link href="css/style.css" type="text/css" rel="stylesheet">
+ </head>
+  
+
+
+ <!-- Contenu visible de la page -->
+ <body id="haut" onload="UpdateClock()" onunload="KillClock()">
+
+    <!-- En-tête du site : logo et navigation -->
+    <header>
+      <nav class="navbar navbar-expand-lg bg-black navbar-dark">
+       <div class="container-fluid px-4">
+ 
+         <!-- Le logo de l'entreprise -->
+         <a href="accueil.html">
+           <img src="images/logocareleon.png" alt="Logo Car-éléon" width="100" height="50" class="object-fit-contain">
+          </a>
+
+          <!-- Bouton burger (mobile) -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Menu : les liens sont ajoutés par javascript -->
+          <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav mx-auto gap-lg-3" id="liens-menu"></ul>
+         </div>
+
+
+           <!-- Horloge positionnée à droite -->
+           <form id="theClock" class="ms-3 mb-0 d-flex align-items-center">
+
+             <button type="button"
+             id="darkModeToggle"
+             class="btn btn-sm btn-outline-light me-2"
+             onclick="toggleDisplayMode()"
+             aria-label="Activer le mode sombre"
+             aria-pressed="false">🌙</button>
+
+
+             <!-- Champ qui affiche l'heure -->
+             <input type="text"
+             id="theTime"
+             class="form-control-plaintext text-light text-end p-0 m-0"
+             value="--:--:--"
+             size="8"
+             readonly>
+           </form>
+
+
+       </div>
+     </nav>
+   </header>
+
+
+  
+   <!-- Section 1 : Bannière de la page FAQ -->
+   <section class="banniere banniere-faq d-flex align-items-center text-white arrondi"
+     aria-labelledby="titre-faq">
+
+     <!-- Bloc contenant les textes de présentation -->
+     <div class="texte-banniere d-flex flex-column align-items-start ms-3 ms-md-5">
+
+       <!-- Titre principal de la page -->
+       <h1 id="titre-faq">Tout savoir sur Car-éléon</h1>
+
+       <!-- Sous-titre invitant les visiteurs à consulter la FAQ -->
+       <h2 class="slogan">Vous avez des questions ?</h2>
+
+       <!-- Présentation du contenu de la FAQ -->
+       <p class="description-banniere">
+          Découvrez les réponses aux questions les plus fréquentes sur notre
+          technologie innovante et personnalisez votre voiture selon vos envies.
+       </p>
+     </div>
+   </section>
+
+
+
+
+   <!-- Section 2 Questions-réponses -->    
+   <section class="container py-5">
+
+     <!-- Titre de la section -->
+     <!-- centre le texte et une marge en dessous -->
+     <h2 class="text-center mb-4">Foire aux questions</h2>
+
+     <!-- Questions-réponses avec Bootstrap. L'id "faqAccordion" permet de relier les différentes questions entre elles -->
+     <div class="accordion" id="faqAccordion">
+      
+
+        <!-- Question 1 -->
+        <div class="accordion-item">
+          <!-- En-tête de la question -->
+          <h3 class="accordion-header">
+           <button class="accordion-button" type="button"
+           data-bs-toggle="collapse" data-bs-target="#faq1"
+            aria-expanded="true" aria-controls="faq1">
+            Comment fonctionne le dispositif Car-éléon ?
+            </button>
+          </h3>
+
+          <!-- Réponse à la question 1 -->
+          <!-- la classe show permet d’afficher la première réponse dès le chargement de la page -->
+          <div id="faq1" class="accordion-collapse collapse show"
+            data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Le dispositif Car-éléon permet de modifier la couleur
+              extérieure de votre véhicule grâce à une technologie
+              innovante pilotée depuis une application mobile.
+            </div>
+          </div>
+       </div>
+
+
+
+       <!-- Question 2 -->
+       <div class="accordion-item">
+         <h3 class="accordion-header">
+           <!--"collapsed" question est fermée au départ -->
+           <button class="accordion-button collapsed" type="button"
+             data-bs-toggle="collapse" data-bs-target="#faq2"
+             aria-expanded="false" aria-controls="faq2">
+             Est-ce compatible avec tous les véhicules ?
+           </button>
+         </h3>
+
+         <!-- Réponse à la question 2 -->
+         <div id="faq2" class="accordion-collapse collapse"
+           data-bs-parent="#faqAccordion">
+           <div class="accordion-body">
+             Oui, tous les modèles de véhicules sont compatibles avec le dispositif Car-éléon, quelle que soit leur marque ou leurs caractéristiques.
+           </div>
+         </div>
+       </div>
+
+
+
+       <!-- Question 3 -->
+       <div class="accordion-item">
+         <h3 class="accordion-header">
+           <button class="accordion-button collapsed" type="button"
+             data-bs-toggle="collapse" data-bs-target="#faq3"
+             aria-expanded="false" aria-controls="faq3">
+             Combien de temps dure la batterie ?
+           </button>
+         </h3>
+
+         <!-- Réponse à la question 3 -->
+         <div id="faq3" class="accordion-collapse collapse"
+           data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+             Le dispositif Car-éléon est conçu pour durer. Sa batterie se recharge automatiquement dès que le boîtier est branché à votre véhicule, vous permettant de profiter de votre dispositif sans vous soucier de le recharger manuellement.
+           </div>
+         </div>
+       </div>
+
+
+
+       <!-- Question 4 -->
+       <div class="accordion-item">
+         <h3 class="accordion-header">
+           <button class="accordion-button collapsed" type="button"
+             data-bs-toggle="collapse" data-bs-target="#faq4"
+             aria-expanded="false" aria-controls="faq4">
+             L’application Car-éléon est-elle compatible avec tous les smartphones ?
+           </button>
+         </h3>
+
+         <!-- Réponse à la question 4 -->
+         <div id="faq4" class="accordion-collapse collapse"
+            data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Oui, l’application Car-éléon est conçue pour être accessible depuis votre smartphone et vous permettre de personnaliser facilement la couleur de votre véhicule.
+           </div>
+         </div>
+       </div>
+
+
+
+       <!-- Question 5 -->
+       <div class="accordion-item">
+         <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button"
+              data-bs-toggle="collapse" data-bs-target="#faq5"
+              aria-expanded="false" aria-controls="faq5">
+              Est-ce dangereux pour le moteur ?
+           </button>
+         </h3>
+
+         <!-- Réponse à la question 5 -->
+         <div id="faq5" class="accordion-collapse collapse"
+           data-bs-parent="#faqAccordion">
+           <div class="accordion-body">
+             Le dispositif est conçu pour personnaliser l’apparence
+             extérieure du véhicule sans intervenir directement sur le
+             moteur. Les conditions d’installation dépendent du modèle
+             de voiture.
+           </div>
+         </div>
+       </div>
+
+
+
+       <!-- Question 6 -->
+       <div class="accordion-item">
+         <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button"
+             data-bs-toggle="collapse" data-bs-target="#faq6"
+             aria-expanded="false" aria-controls="faq6">
+             Quels sont les délais de livraison ?
+           </button>
+         </h3>
+
+         <!-- Réponse à la question 6 -->
+         <div id="faq6" class="accordion-collapse collapse"
+           data-bs-parent="#faqAccordion">
+           <div class="accordion-body">
+             Les délais de livraison dépendent de la disponibilité du
+             produit et de votre adresse. Contactez notre équipe pour
+             obtenir une estimation.
+           </div>
+         </div>
+       </div>
+
+
+
+       <!-- Question 7 -->
+       <div class="accordion-item">
+         <h3 class="accordion-header">
+           <button class="accordion-button collapsed" type="button"
+             data-bs-toggle="collapse" data-bs-target="#faq7"
+             aria-expanded="false" aria-controls="faq7">
+             Comment retourner un produit ?
+           </button>
+         </h3>
+
+         <!-- Réponse à la question 7 -->
+         <div id="faq7" class="accordion-collapse collapse"
+           data-bs-parent="#faqAccordion">
+           <div class="accordion-body">
+             Pour toute demande de retour, contactez notre service client
+             en précisant votre numéro de commande. Notre équipe vous
+             indiquera la procédure à suivre.
+           </div>
+         </div>
+        </div>
+     </div>
+   </section>
+
+
+
+
+   <!-- Bloc de contact -->
+   <div class="container my-5">
+     <div class="bg-light rounded-3 p-4 p-md-5 text-center">
+       <h3 class="mb-3">
+         Vous ne trouvez pas la réponse à votre question ?
+       </h3>
+       <p class="mb-4">
+         Contactez-nous, nous vous répondrons dans les plus brefs délais.
+       </p>
+       <a href="contact.html" class="btn btn-dark" target="_blank">
+         Nous contacter
+       </a>
+     </div>
+   </div>
+
+
+
+    <!-- Pied de page commun à toutes les pages -->
+    <footer class="footer bg-black text-white py-4 mt-0">
+
+     <div class="container">
+
+        <div class="row align-items-center">
+
+          <!-- Informations Car-éléon à gauche -->
+          <div class="col-12 text-center mb-3 mb-lg-0">
+            <p class="mb-2">
+               © 2025 Car-éléon | Tous droits réservés.
+            </p>
+
+            <p class="mb-0">
+             Votre voiture, votre style
+            </p>
+
+         </div>
+
+         <!-- Bouton retour en haut -->
+         <div class="text-center mt-4">
+            <a href="#haut" class="btn btn-retour-haut">
+              ↑ Retour en haut
+            </a>
+         </div>
+
+       </div>
+     </div> 
+   </footer>
+   
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts/script.js"></script>
+
+ </body>
+</html>

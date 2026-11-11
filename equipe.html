@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<!-- Définit la langue de la page en français -->
+<html lang="fr">
+
+<head>
+    <!-- Définir l'encodage de la page -->
+    <meta charset="UTF-8">
+
+    <!-- Adaptation de la page aux écrans mobiles "Bootstrap" -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Titre affiché dans l'onglet du navigateur -->
+    <title>Car-éléon | Équipe</title>
+
+    <!-- Lier à ma page Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Charger les icônes Bootstrap enveloppe -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Lier à ma page CSS -->
+    <link href="css/style.css" type="text/css" rel="stylesheet">
+</head>
+
+
+<!-- Contenu visible de la page -->
+<body id="haut" onload="UpdateClock()" onunload="KillClock()">
+
+    <!-- En-tête du site : logo et navigation -->
+    <header>
+        <nav class="navbar navbar-expand-lg bg-black navbar-dark">
+            <div class="container-fluid px-4">
+
+                <!-- Le logo de l'entreprise -->
+                <a href="accueil.html">
+                    <img src="images/logocareleon.png"
+                         alt="Logo Car-éléon"
+                         width="100"
+                         height="50"
+                         class="object-fit-contain">
+                </a>
+
+                <!-- Bouton burger (mobile) -->
+                <button class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Menu : les liens sont ajoutés par JavaScript -->
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="navbar-nav mx-auto gap-lg-3" id="liens-menu"></ul>
+                </div>
+
+                <!-- Horloge positionnée à droite -->
+                <form id="theClock" class="ms-3 mb-0 d-flex align-items-center">
+
+                    <!-- Bouton permettant d'activer ou de désactiver le mode sombre -->
+                    <button type="button"
+                            id="darkModeToggle"
+                            class="btn btn-sm btn-outline-light me-2"
+                            onclick="toggleDisplayMode()"
+                            aria-label="Activer le mode sombre"
+                            aria-pressed="false">🌙</button>
+
+                    <!-- Champ qui affiche l'heure -->
+                    <input type="text"
+                           id="theTime"
+                           class="form-control-plaintext text-light text-end p-0 m-0"
+                           value="--:--:--"
+                           size="8"
+                           readonly>
+
+                </form>
+
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- Section 1 : bannière -->
+    <section class="banniere banniere-equipe d-flex align-items-center text-white arrondi"
+             aria-labelledby="titre-equipe">
+
+        <!-- Bloc contenant les textes de présentation -->
+        <div class="texte-banniere d-flex flex-column align-items-start ms-3 ms-md-5">
+
+            <!-- Titre principal de la page -->
+            <h1 id="titre-equipe">Notre équipe</h1>
+
+            <!-- Slogan présentant l'esprit du groupe -->
+            <h2 class="slogan">Une passion commune, un projet innovant.</h2>
+
+            <!-- Présentation de l'équipe et du projet Car-éléon -->
+            <p class="description-banniere">
+                Nous sommes une équipe de passionnés d'automobile et de technologie, unis par l'envie de créer une solution unique :
+                <br>
+                <strong>Car-éléon.</strong>
+            </p>
+
+            <!-- Invitation à découvrir les membres de l'équipe -->
+            <p class="accroche-banniere">
+                Découvrez les personnes qui donnent vie à notre projet.
+            </p>
+
+        </div>
+    </section>
+
+
+    <!-- Section 2 : les quatre cartes de présentation des membres de l'équipe -->
+    <main class="container my-5">
+
+        <!-- Ligne qui contient les quatre cartes -->
+        <div class="row g-4">
+
+            <!-- Première carte : Maha -->
+            <div class="col-12 col-sm-6 col-lg-3">
+
+                <!-- Carte de présentation de Maha -->
+                <article class="card h-100 shadow-sm">
+
+                    <!-- Photo de Maha -->
+                    <img src="images/imagemaha.jpeg"
+                         class="card-img-top"
+                         alt="Photo de Maha">
+
+                    <!-- Contenu de la carte -->
+                    <div class="card-body text-center d-flex flex-column">
+
+                        <!-- Nom de Maha -->
+                        <h2 class="card-title">Maha</h2>
+
+                        <!-- Fonction de Maha -->
+                        <p class="role">Cheffe de projet</p>
+
+                        <!-- Description de Maha -->
+                        <p class="card-text">
+                            Elle coordonne les activités de l'équipe et veille
+                            au bon déroulement du projet Car-éléon.
+                        </p>
+
+                        <!-- Zone où JavaScript crée automatiquement le bouton email -->
+                        <div class="mt-auto zone-email"></div>
+
+                    </div>
+                </article>
+            </div>
+
+
+            <!-- Deuxième carte : Wala -->
+            <div class="col-12 col-sm-6 col-lg-3">
+
+                <!-- Carte de présentation de Wala -->
+                <article class="card h-100 shadow-sm">
+
+                    <!-- Photo de Wala -->
+                    <img src="images/imagewala.jpeg"
+                         class="card-img-top"
+                         alt="Photo de Wala">
+
+                    <!-- Contenu de la carte -->
+                    <div class="card-body text-center d-flex flex-column">
+
+                        <!-- Nom de Wala -->
+                        <h2 class="card-title">Wala</h2>
+
+                        <!-- Fonction de Wala -->
+                        <p class="role">Développeuse web</p>
+
+                        <!-- Description de Wala -->
+                        <p class="card-text">
+                            Elle participe à la création du site web et développe
+                            les fonctionnalités de notre plateforme automobile.
+                        </p>
+
+                        <!-- Zone où JavaScript crée automatiquement le bouton email -->
+                        <div class="mt-auto zone-email"></div>
+
+                    </div>
+                </article>
+            </div>
+
+
+            <!-- Troisième carte : Nihad -->
+            <div class="col-12 col-sm-6 col-lg-3">
+
+                <!-- Carte de présentation de Nihad -->
+                <article class="card h-100 shadow-sm">
+
+                    <!-- Photo de Nihad -->
+                    <img src="images/imagenihad.jpeg"
+                         class="card-img-top"
+                         alt="Photo de Nihad">
+
+                    <!-- Contenu de la carte -->
+                    <div class="card-body text-center d-flex flex-column">
+
+                        <!-- Nom de Nihad -->
+                        <h2 class="card-title">Nihad</h2>
+
+                        <!-- Fonction de Nihad -->
+                        <p class="role">Designer UI/UX</p>
+
+                        <!-- Description de Nihad -->
+                        <p class="card-text">
+                            Elle imagine une interface moderne, intuitive et
+                            agréable pour offrir une meilleure expérience
+                            aux utilisateurs.
+                        </p>
+
+                        <!-- Zone où JavaScript crée automatiquement le bouton email -->
+                        <div class="mt-auto zone-email"></div>
+
+                    </div>
+                </article>
+            </div>
+
+
+            <!-- Quatrième carte : Nadine -->
+            <div class="col-12 col-sm-6 col-lg-3">
+
+                <!-- Carte de présentation de Nadine -->
+                <article class="card h-100 shadow-sm">
+
+                    <!-- Photo de Nadine -->
+                    <img src="images/imagenadine.jpeg"
+                         class="card-img-top"
+                         alt="Photo de Nadine">
+
+                    <!-- Contenu de la carte -->
+                    <div class="card-body text-center d-flex flex-column">
+
+                        <!-- Nom de Nadine -->
+                        <h2 class="card-title">Nadine</h2>
+
+                        <!-- Fonction de Nadine -->
+                        <p class="role">Marketing et communication</p>
+
+                        <!-- Description de Nadine -->
+                        <p class="card-text">
+                            Elle développe la communication de Car-éléon
+                            et met en valeur notre projet auprès de notre public.
+                        </p>
+
+                        <!-- Zone où JavaScript crée automatiquement le bouton email -->
+                        <div class="mt-auto zone-email"></div>
+
+                    </div>
+                </article>
+            </div>
+
+        </div>
+    </main>
+
+
+    <!-- Section 3 : localisation de l'entreprise -->
+    <section class="adresse container my-5 text-center">
+
+        <!-- Titre de la section -->
+        <h2 class="mb-4">Notre localisation</h2>
+
+        <!-- Conteneur de la carte Google Maps -->
+        <div class="map-container">
+
+            <!-- Carte Google Maps intégrée à l'aide d'une iframe -->
+            <iframe
+                src="https://www.google.com/maps?q=Grand%20Place%20Lille&output=embed"
+                title="Notre localisation à Lille"
+                allowfullscreen
+                loading="lazy">
+            </iframe>
+
+        </div>
+
+    </section>
+
+
+    <!-- Pied de page commun à toutes les pages -->
+    <footer class="footer bg-black text-white py-4 mt-0">
+
+        <div class="container">
+
+            <div class="row align-items-center">
+
+                <!-- Informations Car-éléon au centre -->
+                <div class="col-12 text-center mb-3 mb-lg-0">
+
+                    <p class="mb-2">
+                        © 2025 Car-éléon | Tous droits réservés.
+                    </p>
+
+                    <p class="mb-0">
+                        Votre voiture, votre style
+                    </p>
+
+                </div>
+
+                <!-- Bouton retour en haut -->
+                <div class="text-center mt-4">
+                    <a href="#haut" class="btn btn-retour-haut">
+                        ↑ Retour en haut
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Lier le fichier JavaScript de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Lier le fichier JavaScript du site -->
+    <script src="scripts/script.js"></script>
+
+</body>
+</html>

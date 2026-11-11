@@ -1,0 +1,547 @@
+<!DOCTYPE html> 
+<html lang="fr"> 
+
+
+
+ <head> <!-- Contient les informations techniques de la page -->
+   <!-- Permet d'afficher correctement les accents -->
+   <meta charset="UTF-8">
+
+   <!-- Permet à la page de s'adapter aux écrans des téléphones, tablettes et ordinateurs -->
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <!-- Titre affiché dans l'onglet du navigateur -->
+   <title>Car-éléon | Produit</title> 
+
+   <!-- Lier à ma page bootstrap -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+   <!-- Importation de Font Awesome pour les icônes -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Relie la page HTML à ma propre feuille de style CSS -->
+    <link href="css/style.css" type="text/css" rel="stylesheet">
+
+</head>
+
+
+
+
+<!-- Début du contenu visible de la page -->
+<body id="haut" onload="UpdateClock()" onunload="KillClock()">
+   
+    <!-- Élément header : contient l'en-tête commun du site -->
+    <header>
+
+
+        <!-- Barre de navigation avec fond noir responsive -->
+        <!-- navbar-dark : adapte les couleurs du menu pour un fond sombre -->
+        <nav class="navbar navbar-expand-lg bg-black navbar-dark">
+
+
+            <!-- container-fluid : occupe toute la largeur disponible -->
+            <!-- px-4 : ajoute un espacement horizontal intérieur -->
+            <div class="container-fluid px-4">
+
+
+                <!-- Le logo de l'entreprise avec lien vers la page d'accueil -->
+                <a href="accueil.html">
+
+
+                    <!-- Affiche le logo de Car-éléon -->
+                    <!-- object-fit-contain : conserve les proportions de l'image -->
+                    <img src="images/logocareleon.png"
+                         alt="Logo Car-éléon"
+                         width="100"
+                         height="50"
+                         class="object-fit-contain">
+
+                </a>
+
+
+                <!-- Bouton burger affiché sur les petits écrans -->
+                <!-- navbar-toggler : crée le bouton de navigation mobile -->
+                <!-- data-bs-toggle="collapse" : permet d'ouvrir et de fermer le menu -->
+                <!-- data-bs-target="#menu" : indique que le bouton contrôle l'élément ayant l'identifiant menu -->
+                <button class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#menu">
+
+                    <!-- Affiche l'icône du menu burger de Bootstrap -->
+                    <span class="navbar-toggler-icon"></span>
+
+                </button>
+
+
+                <!-- Menu de navigation -->
+                <!-- collapse : permet de masquer ou afficher le menu sur les petits écrans -->
+                <!-- navbar-collapse : applique le comportement de navigation Bootstrap -->
+                <!-- id="menu" : permet au bouton burger de contrôler cette partie -->
+                <div class="collapse navbar-collapse" id="menu">
+
+                    <!-- navbar-nav : applique la présentation d'une liste de navigation -->
+                    <!-- mx-auto : centre horizontalement le menu -->
+                    <!-- gap-lg-3 : ajoute un espace entre les liens sur les grands écrans -->
+                    <!-- id="liens-menu" : permet au fichier JavaScript d'ajouter automatiquement les liens des pages -->
+                    <ul class="navbar-nav mx-auto gap-lg-3" id="liens-menu"></ul>
+
+                </div>
+
+
+           <!-- Horloge positionnée à droite -->
+           <form id="theClock" class="ms-3 mb-0 d-flex align-items-center">
+
+           <button type="button"
+           id="darkModeToggle"
+           class="btn btn-sm btn-outline-light me-2"
+           onclick="toggleDisplayMode()"
+           aria-label="Activer le mode sombre"
+           aria-pressed="false">🌙</button>
+
+           <!-- Champ qui affiche l'heure -->
+           <input type="text"
+           id="theTime"
+           class="form-control-plaintext text-light text-end p-0 m-0"
+           value="--:--:--"
+           size="8"
+           readonly>
+
+            </form>
+
+
+            </div>
+        </nav>
+
+    </header>
+
+
+    
+
+    <!-- SECTION 1 : BANNIÈRE DE PRÉSENTATION DU DISPOSITIF -->
+
+    <!-- section : crée la première partie de présentation -->
+    <!-- banniere et banniere-produit : classes personnelles définies dans mon CSS -->
+    <!-- d-flex : utilise Flexbox pour organiser les éléments -->
+    <!-- align-items-center : centre verticalement le contenu -->
+    <!-- text-white : affiche le texte en blanc -->
+    <!-- aria-labelledby : associe la section à son titre principal pour l'accessibilité -->
+    <section class="banniere banniere-produit d-flex align-items-center text-white arrondi"
+             aria-labelledby="titre-produit">
+
+
+        <!-- Bloc contenant les textes de présentation -->
+        <!-- texte-banniere : classe personnelle définie dans mon CSS -->
+        <!-- d-flex : active Flexbox -->
+        <!-- flex-column : organise les éléments verticalement -->
+        <!-- align-items-start : aligne les éléments au début du bloc -->
+        <!-- ms-3 : ajoute une marge à gauche sur les petits écrans -->
+        <!-- ms-md-5 : augmente cette marge à partir des écrans moyens -->
+        <div class="texte-banniere d-flex flex-column align-items-start ms-3 ms-md-5">
+
+
+            <!-- Titre principal de la section -->
+            <!-- id="titre-produit" : permet de relier le titre à la section grâce à aria-labelledby -->
+            <h1 id="titre-produit">Le dispositif Car-éléon</h1>
+
+
+            <!-- Sous-titre : présente le slogan du dispositif -->
+            <!-- slogan : classe personnelle définie dans mon CSS -->
+            <h2 class="slogan">Un petit boîtier, de grandes possibilités !</h2>
+
+
+            <!-- Premier paragraphe : explique le fonctionnement et l'objectif du dispositif -->
+            <!-- description-banniere : classe personnelle définie dans mon CSS -->
+            <p class="description-banniere">
+                Découvrez Car-éléon, un dispositif innovant qui vous permet
+                de transformer l'apparence de votre voiture selon vos envies.
+                Grâce à une connexion USB ou Bluetooth, personnalisez la couleur
+                de votre carrosserie et donnez une nouvelle identité à votre véhicule.
+            </p>
+
+
+            <!-- Deuxième paragraphe : met en valeur les possibilités de personnalisation -->
+            <!-- accroche-banniere : classe personnelle définie dans mon CSS -->
+            <p class="accroche-banniere">
+                Exprimez votre créativité et faites de votre voiture
+                un modèle qui ne ressemble à aucun autre !
+            </p>
+
+
+            <!-- Bouton qui dirige l'utilisateur vers la section vidéo -->
+            <!-- href="#video" : renvoie vers l'élément qui possède id="video" -->
+            <!-- btn : applique le style de base d'un bouton Bootstrap -->
+            <!-- btn-primary : applique la couleur principale de Bootstrap -->
+            <!-- btn-lg : augmente la taille du bouton -->
+            <a href="#video" class="btn btn-primary btn-lg">Voir la vidéo</a>
+
+
+        </div>
+    </section>
+
+
+
+
+
+<!-- SECTION 2 : COMMENT ÇA FONCTIONNE ? -->
+<section class="fonctionnement py-5">
+
+    <div class="container">
+
+        <h2 class="text-center">Comment ça fonctionne ?</h2>
+
+        <p class="intro-section text-center mb-4">
+            Découvrez les trois étapes pour prendre en main votre dispositif.
+        </p>
+
+        <div class="etapes row g-4 justify-content-center">
+
+            <!-- Étape 1 -->
+            <div class="etape col-12 col-md-4 text-center">
+
+                <img src="images/uspb.jpg" alt="Branchement USB" class="img-fluid">
+
+                <h3>1. Branchez</h3>
+
+                <p>
+                    Connectez le dispositif à votre véhicule
+                    grâce à une connexion USB ou Bluetooth.
+                </p>
+
+                <button class="btn btn-primary"
+                        onclick="afficherDetailEtape(1)">
+                    En savoir plus
+                </button>
+
+                <!-- Explication supplémentaire -->
+                <div id="detail-etape-1" class="mt-3 d-none">
+                    <p>
+                        Le dispositif se branche facilement dans votre
+                        véhicule. Il permet d'établir une connexion
+                        avec votre application mobile pour commencer
+                        la personnalisation.
+                    </p>
+                </div>
+
+            </div>
+
+
+
+            <!-- Étape 2 -->
+            <div class="etape col-12 col-md-4 text-center">
+
+                <img src="images/smartphone.jpg" alt="Application mobile" class="img-fluid">
+
+                <h3>2. Sélectionnez</h3>
+
+                <p>
+                    Ouvrez l'application mobile et explorez
+                    les différentes possibilités de personnalisation.
+                </p>
+
+                <button class="btn btn-primary"
+                        onclick="afficherDetailEtape(2)">
+                    En savoir plus
+                </button>
+
+                <!-- Explication supplémentaire -->
+                <div id="detail-etape-2" class="mt-3 d-none">
+                    <p>
+                        Parcourez la palette de couleurs proposée
+                        dans l'application. Choisissez votre teinte
+                        préférée et personnalisez votre véhicule
+                        selon vos envies.
+                    </p>
+
+                  <img src="images/application.png"
+                  alt="Aperçu de l'application Car-éléon"
+                  class="img-fluid mt-2 image-interactive">
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Étape 3 -->
+            <div class="etape col-12 col-md-4 text-center">
+
+                <img src="images/voiture.jpg" alt="Voiture personnalisée" class="img-fluid">
+
+                <h3>3. Admirez le résultat</h3>
+
+                <p>
+                    Découvrez le nouveau style de votre véhicule
+                    et profitez d'une apparence qui vous correspond.
+                </p>
+
+                <button class="btn btn-primary"
+                        onclick="afficherDetailEtape(3)">
+                    En savoir plus
+                </button>
+
+                <!-- Explication supplémentaire -->
+                <div id="detail-etape-3" class="mt-3 d-none">
+                    <p>
+                        Une fois votre choix effectué, découvrez
+                        le résultat de votre personnalisation.
+                        Votre véhicule adopte un style original
+                        qui reflète votre personnalité.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+
+
+<!-- SECTION 3 : LES COULEURS DISPONIBLES -->
+<div class="couleurs-produit py-5">
+
+    <div class="container">
+
+        <h2 class="text-center">Une palette de couleurs à votre image</h2>
+
+        <p class="intro-section text-center mb-4">
+            Du classique à l'audacieux, choisissez la teinte
+            qui donnera du caractère à votre véhicule.
+        </p>
+
+        <ul class="row list-unstyled g-4 justify-content-center">
+
+            <!-- Première couleur -->
+            <li class="col-6 col-md-4 col-lg-2 text-center"
+                onclick="afficherDetailCouleur('Bleu électrique')">
+
+                <img src="images/bleu.jpg" alt="Bleu électrique" class="img-fluid">
+                <p>Bleu électrique</p>
+            </li>
+
+            <!-- Deuxième couleur -->
+            <li class="col-6 col-md-4 col-lg-2 text-center"
+                onclick="afficherDetailCouleur('Rouge passion')">
+
+                <img src="images/rouge.jpg" alt="Rouge passion" class="img-fluid">
+                <p>Rouge passion</p>
+            </li>
+
+            <!-- Troisième couleur -->
+            <li class="col-6 col-md-4 col-lg-2 text-center"
+                onclick="afficherDetailCouleur('Vert émeraude')">
+
+                <img src="images/vert.jpg" alt="Vert émeraude" class="img-fluid">
+                <p>Vert émeraude</p>
+            </li>
+
+            <!-- Quatrième couleur -->
+            <li class="col-6 col-md-4 col-lg-2 text-center"
+                onclick="afficherDetailCouleur('Violet mystique')">
+
+                <img src="images/violet.jpg" alt="Violet mystique" class="img-fluid">
+                <p>Violet mystique</p>
+            </li>
+
+            <!-- Cinquième couleur -->
+            <li class="col-6 col-md-4 col-lg-2 text-center"
+                onclick="afficherDetailCouleur('Orange sunset')">
+
+                <img src="images/orange.jpg" alt="Orange sunset" class="img-fluid">
+                <p>Orange sunset</p>
+            </li>
+
+            <!-- Sixième couleur -->
+            <li class="col-6 col-md-4 col-lg-2 text-center"
+                onclick="afficherDetailCouleur('Argent métal')">
+
+                <img src="images/argent.jpg" alt="Argent métal" class="img-fluid">
+                <p>Argent métal</p>
+            </li>
+
+        </ul>
+
+        <!-- Zone d'affichage du résultat -->
+        <div id="detail-couleur" class="text-center mt-3"></div>
+
+        <!-- Bouton pour choisir une couleur au hasard -->
+        <div class="text-center mt-4">
+
+            <button class="btn btn-primary"
+                    onclick="surprendreCouleur()">
+
+                Surprenez-moi !
+
+            </button>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+
+<!-- SECTION 4 : UNE EXPÉRIENCE AUTOMOBILE UNIQUE -->
+<section class="fonctionnement avantages py-5">
+
+    <div class="container">
+
+        <h2 class="text-center">Votre voiture, votre signature !</h2>
+
+        <p class="intro-section text-center mb-4">
+            Et si votre voiture pouvait exprimer votre humeur ?
+            Avec Car-éléon, chaque trajet devient une nouvelle occasion
+            de révéler votre personnalité.
+        </p>
+
+        <div class="etapes row g-4 justify-content-center">
+
+            <!-- Expérience 1 -->
+            <div class="etape carte-avantage col-12 col-md-4 text-center p-4">
+
+                <i class="fa-solid fa-sun icone-avantage"></i>
+
+                <h3 id="titre-1">Selon votre humeur</h3>
+
+                <p id="texte-1">
+                    Une envie de changement ? Adaptez le style de votre
+                    véhicule à votre humeur du jour et à vos inspirations.
+                </p>
+
+            </div>
+
+            <!-- Expérience 2 -->
+            <div class="etape carte-avantage col-12 col-md-4 text-center p-4">
+
+                <i class="fa-solid fa-star icone-avantage"></i>
+
+                <h3 id="titre-2">Pour toutes les occasions</h3>
+
+                <p id="texte-2">
+                    Une sortie entre amis, un événement spécial ou
+                    simplement un trajet quotidien : donnez une touche
+                    originale à chaque occasion.
+                </p>
+
+            </div>
+
+            <!-- Expérience 3 -->
+            <div class="etape carte-avantage col-12 col-md-4 text-center p-4">
+
+                <i class="fa-solid fa-fingerprint icone-avantage"></i>
+
+                <h3 id="titre-3">Un style qui vous ressemble</h3>
+
+                <p id="texte-3">
+                    Ne vous contentez pas d'une voiture ordinaire.
+                    Créez une identité visuelle qui attire les regards
+                    et reflète votre créativité.
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- Bouton pour découvrir d'autres facettes de Car-éléon -->
+        <div class="text-center mt-4">
+
+            <button class="btn btn-primary"
+                    id="bouton-experiences"
+                    onclick="changerExperiences()">
+
+                Découvrez une autre facette !
+
+            </button>
+
+        </div>
+
+    </div>
+</section>
+
+
+
+
+<!-- SECTION 5 : VIDÉO DE PRÉSENTATION -->
+<section class="fonctionnement video-produit py-5" id="video">
+
+    <div class="container text-center">
+
+        <!-- Titre de la section vidéo -->
+        <h2>Découvrez Car-éléon en vidéo</h2>
+
+        <!-- Texte de présentation -->
+        <p class="intro-section">
+            Plongez dans l'univers Car-éléon et découvrez
+            notre concept en images.
+        </p>
+
+        <!-- Centrer et réduire la vidéo -->
+        <div class="row justify-content-center">
+
+            <div class="col-8 col-md-6 col-lg-4">
+
+                <!-- Vidéo personnelle -->
+                <video
+                    class="w-100 rounded"
+                    controls
+                    playsinline
+                    preload="metadata">
+
+                    <source src="videos/presentation.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+<!-- Pied de page commun à toutes les pages -->
+    <footer class="footer bg-black text-white py-4 mt-0">
+
+     <div class="container">
+
+        <div class="row align-items-center">
+
+          <!-- Informations Car-éléon à gauche -->
+          <div class="col-12 text-center mb-3 mb-lg-0">
+            <p class="mb-2">
+               © 2025 Car-éléon | Tous droits réservés.
+            </p>
+
+            <p class="mb-0">
+             Votre voiture, votre style
+            </p>
+
+         </div>
+
+         <!-- Bouton retour en haut -->
+         <div class="text-center mt-4">
+            <a href="#haut" class="btn btn-retour-haut">
+              ↑ Retour en haut
+            </a>
+         </div>
+
+       </div>
+     </div> 
+   </footer>
+   
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="scripts/script.js"></script>
+
+
+</body>
+</html>

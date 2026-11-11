@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<!-- Définit la langue de la page en français -->
+<html lang="fr">
+
+
+<head>
+    <!-- Définir l'encodage de la page -->
+    <meta charset="UTF-8">
+    <!-- Adaptation de la page aux écrans mobiles "BOOSTRAST" -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Titre affiché dans l'onglet du navigateur -->
+    <title>Car-éléon | Contact</title>
+    <!-- Lier à ma page bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Lier à ma page css -->
+    <link href="css/style.css" type="text/css" rel="stylesheet">
+</head>
+ 
+
+<!-- Contenu visible de la page -->
+<body id="haut" onload="UpdateClock()" onunload="KillClock()">
+
+    <!-- En-tête du site : logo et navigation -->
+    <header>
+        <nav class="navbar navbar-expand-lg bg-black navbar-dark">
+            <div class="container-fluid px-4">
+
+                <!-- Le logo de l'entreprise -->
+                <a href="accueil.html">
+                    <img src="images/logocareleon.png" alt="Logo Car-éléon" width="100" height="50" class="object-fit-contain">
+                </a>
+
+                <!-- Bouton burger (mobile) -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Contient les liens de navigation générés par JavaScript -->
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="navbar-nav mx-auto gap-lg-3" id="liens-menu">
+                    </ul>
+                </div>
+
+                <!-- Horloge positionnée à droite -->
+                <form id="theClock" class="ms-3 mb-0 d-flex align-items-center">
+
+                    <button type="button"
+                    id="darkModeToggle"
+                    class="btn btn-sm btn-outline-light me-2"
+                    onclick="toggleDisplayMode()"
+                    aria-label="Activer le mode sombre"
+                    aria-pressed="false">🌙</button>
+
+
+                    <!-- Champ qui affiche l'heure -->
+                    <input type="text"
+                    id="theTime"
+                    class="form-control-plaintext text-light text-end p-0 m-0"
+                    value="--:--:--"
+                    size="8"
+                    readonly>
+                </form>
+
+            </div>
+        </nav>
+    </header>
+
+
+
+    <!-- Section 1 : Bannière de la page contact -->
+    <section class="banniere banniere-faq d-flex align-items-center text-white arrondi"
+            aria-labelledby="titre-contact">
+
+        <div class="texte-banniere d-flex flex-column align-items-start ms-3 ms-md-5">
+
+            <h1 id="titre-contact">Contactez-nous</h1>
+
+            <h2 class="slogan">Une question ? Parlons-en !</h2>
+
+            <p class="description-banniere">
+                Une question sur notre technologie ou besoin d’aide ?
+                Notre équipe est à votre écoute pour vous accompagner.
+            </p>
+
+        </div>
+    </section>
+
+
+
+    <!-- SECTION 2 : Formulaire de contact -->
+    <section id="sectionContact" class="py-5" aria-labelledby="titre-formulaire">
+
+        <!-- Conteneur principal qui centre le contenu -->
+        <div class="container">
+
+            <!-- Titre et texte d'introduction du formulaire -->
+            <div class="text-center mb-5">
+                <h2 id="titre-formulaire">Contactez-nous</h2>
+                <p>Une question sur Car-éléon ? Envoyez-nous un message !</p>
+            </div>
+
+            <!-- Organisation du contenu en deux colonnes sur les grands écrans -->
+            <div class="row g-4 align-items-stretch">
+
+                <!-- Première colonne : formulaire de contact -->
+                <div class="col-12 col-lg-7">
+                    <div class="carte-contact h-100">
+
+                        <!-- Sous-titre du formulaire -->
+                        <h3 class="mb-4">Envoyez-nous un message</h3>
+
+                        <!-- Gestion de l'envoi avec JavaScript -->
+                        <form id="contact" onsubmit="return false;">
+
+
+                            <!-- Nom -->
+                            <div class="mb-3">
+                                <label for="Name" class="form-label">Votre nom</label>
+
+                                <!-- Champ du nom obligatoire, limité à 100 caractères -->
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="Name"
+                                    name="Name"
+                                    maxlength="100"
+                                    placeholder="Entrez votre nom"
+                                    required>
+                            </div>
+
+
+
+                            <!-- Zone de saisie du message avec une limite de 350 caractères -->
+                            <div class="mb-3">
+                                <label id="lblMessage"
+                                    for="Message"
+                                    class="form-label">
+                                    Votre message
+                                </label>
+
+                                <textarea
+                                class="form-control"
+                                id="Message"
+                                name="Message"
+                                rows="6"
+                                maxlength="350"
+                                placeholder="Écrivez votre message ici..."
+                                oninput="countWordMessage(this)"
+                                required></textarea>
+                            </div>
+
+                            <div class="form-text mb-3">
+                                350 caractères maximum.
+                            </div>
+
+
+
+                            <!-- Conteneur qui centre le bouton d'envoi -->
+                            <div class="text-center">
+                                <button
+                                    id="btnSend"
+                                    class="btn btn-dark px-4"
+                                    title="Envoyer"
+                                    type="button"
+                                    onclick="sendEmail(
+                                    document.getElementById('Name').value,
+                                    document.getElementById('Message').value
+                                    )">
+
+                                    <!-- Élément utilisé pour créer l'effet visuel du curseur -->
+
+
+                                    <!-- Texte affiché sur le bouton -->
+                                    Envoyer
+                                </button>
+                            </div>
+
+                            <!-- Élément utilisé pour créer l'effet visuel du curseur -->
+                            <div id="cursor" class="cursor"></div>
+
+
+                        </form>
+                    </div>
+                </div>
+
+
+
+                <!-- COLONNE DROITE : ACHAT DU BOÎTIER CAR-ÉLÉON -->
+                <div class="col-12 col-lg-5">
+
+                    <!-- Carte contenant les informations du boîtier -->
+                    <div class="carte-produit h-100">
+
+
+                        <!-- Titre présentant le produit -->
+                        <h3>Le boîtier Car-éléon</h3>
+
+
+                        <!-- Image représentant le boîtier Car-éléon -->
+                        <img
+                            src="images/achat.png"
+                            alt="Boîtier électronique Car-éléon"
+                            class="img-fluid image-boitier">
+
+
+                        <!-- Description du fonctionnement et de l'intérêt du produit -->
+                        <p>
+                            Personnalisez la couleur extérieure de votre véhicule
+                            grâce à notre concept innovant de carrosserie
+                            personnalisable.
+                        </p>
+
+
+                        <!-- Prix et bouton d'achat alignés horizontalement -->
+                        <div class="d-flex align-items-center justify-content-between gap-3 flex-wrap">
+
+                            <!-- Prix du boîtier -->
+                            <div class="prix-produit">499 €</div>
+
+                            <!-- Bouton permettant au visiteur de manifester son intérêt pour l'achat -->
+                            <button
+                                type="button"
+                                class="btn btn-achat"
+                                id="interesseBoitier">
+
+
+                                <!-- Icône de panier provenant de Bootstrap Icons -->
+                                <i class="bi bi-cart3"></i>
+                                Je souhaite acheter ce boîtier
+
+                            </button>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Pied de page commun à toutes les pages -->
+    <footer class="footer bg-black text-white py-4 mt-0">
+        <div class="container">
+
+            <div class="row align-items-center">
+                <!-- Informations Car-éléon à gauche -->
+                <div class="col-12 text-center mb-3 mb-lg-0">
+                    <p class="mb-2">
+                        © 2025 Car-éléon | Tous droits réservés.
+                    </p>
+
+                    <p class="mb-0">
+                        Votre voiture, votre style
+                    </p>
+                </div>
+
+                <!-- Bouton retour en haut -->
+                <div class="text-center mt-4">
+                    <a href="#haut" class="btn btn-retour-haut">
+                        ↑ Retour en haut
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts/script.js"></script>
+</body>
+</html>

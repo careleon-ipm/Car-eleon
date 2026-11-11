@@ -1,0 +1,1055 @@
+/*  Entete - nav-bar : NAVIGATION  */
+/* Mode sombre */ 
+/* Couleurs communes et composants qui utilisent des fonds explicites */
+body {
+    background-color: #ffffff;
+    color: #212529;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+
+/* Applique un fond sombre et un texte clair lorsque le mode sombre est activé */
+body.dark-mode {
+    background-color: #1f1f1f !important;
+    color: #f8f9fa;
+}
+
+
+/* Adapte les fonds des principales sections au mode sombre */
+body.dark-mode .bg-light,
+body.dark-mode .troisavantages,
+body.dark-mode .couleurs-acceuil,
+body.dark-mode .fonctionnement,
+body.dark-mode .couleurs-produit,
+body.dark-mode .video-produit,
+body.dark-mode .avantages,
+body.dark-mode .section-avis {
+    background-color: #1f1f1f !important;
+    color: #f8f9fa;
+}
+
+
+/* Assombrit les cartes tout en conservant un texte clair */
+body.dark-mode .carte-avantage,
+body.dark-mode .avantages .carte-avantage,
+body.dark-mode .carte-avis,
+body.dark-mode .card {
+    background-color: #2b2b2b !important;
+    color: #f8f9fa;
+}
+
+
+/* Modifie le fond et le texte de la section Notre vision */
+body.dark-mode .notre-vision {
+    background: #292929;
+    color: #f8f9fa;
+}
+
+
+/* Éclaircit les paragraphes pour améliorer leur lisibilité en mode sombre */
+body.dark-mode .couleurs-acceuil p,
+body.dark-mode .fonctionnement .intro-section,
+body.dark-mode .fonctionnement .etape p,
+body.dark-mode .couleurs-produit p,
+body.dark-mode .avantages .carte-avantage p,
+body.dark-mode .card-text,
+body.dark-mode .carte-avis .commentaire {
+    color: #d7d7d7;
+}
+
+
+/* Adapte la couleur des titres au mode sombre */
+body.dark-mode .fonctionnement h2,
+body.dark-mode .fonctionnement .etape h3,
+body.dark-mode .couleurs-produit h2,
+body.dark-mode .card-title,
+body.dark-mode .adresse h2,
+body.dark-mode .carte-avis .date-client {
+    color: #f8f9fa;
+}
+
+
+/* Personnalise le message d'information du diaporama en mode sombre */
+body.dark-mode .couleurs-acceuil .alert {
+    background-color: #33233d;
+    color: #f8f9fa;
+}
+
+
+/* Personnalise la question ouverte de la FAQ en mode sombre */
+body.dark-mode #faqAccordion .accordion-button:not(.collapsed) {
+    background-color: #33233d;
+    color: #d9a7ff;
+}
+
+
+/* Assombrit les questions et les réponses de la FAQ */
+body.dark-mode #faqAccordion .accordion-button,
+body.dark-mode #faqAccordion .accordion-body {
+    background-color: #2b2b2b;
+    color: #f8f9fa;
+}
+
+
+/* Assombrit les bordures des questions de la FAQ */
+body.dark-mode #faqAccordion .accordion-item {
+    border-color: #555;
+}
+
+
+/* Adapte les champs de saisie au mode sombre */
+body.dark-mode input.form-control,
+body.dark-mode textarea.form-control {
+    background-color: #2b2b2b;
+    color: #f8f9fa;
+    border-color: #666;
+}
+
+
+/* Éclaircit le texte indicatif des champs de saisie */
+body.dark-mode input.form-control::placeholder,
+body.dark-mode textarea.form-control::placeholder {
+    color: #adb5bd;
+}
+
+
+/* Heure */ 
+/* Bouton placé juste à gauche de l'horloge */
+#darkModeToggle {
+    line-height: 1;
+}
+
+/* Ajuste la largeur de l'horloge selon son contenu */
+#theTime {
+    width: auto;
+}
+
+
+
+
+/* Liens des pages */
+/* Définit la couleur, la taille et l'épaisseur des liens de navigation */
+.navbar .nav-link {
+    color: #94a3b8;  /* Gris bleuté quand le lien n'est pas actif */
+    font-size: 0.9rem; /* Taille du texte */
+    font-weight: 600;  /* Texte légèrement en gras */
+}
+
+
+/* Survol et page en cours : lien en blanc */
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: #ffffff;    
+}
+
+
+/* Page en cours : trait violet sous le lien */
+.navbar .nav-link.active {
+    border-bottom: 2px solid #A020F0; 
+}
+
+
+/* LIENS AU CENTRE DE LA BARRE (ordinateur) */
+/* Ce bloc ne s'applique que sur les écrans de 992 px ou plus.
+   En dessous, le menu burger garde son fonctionnement normal. */
+@media (min-width: 992px) {
+
+  .navbar .navbar-collapse {
+    position: absolute;            /* Sort le menu du flux : le logo ne le pousse plus */
+    left: 50%;                     /* Place le bord gauche du menu au milieu de la barre */
+    transform: translateX(-50%);   /* Recule le menu de la moitié de sa largeur : il est pile centré */
+    flex-grow: 0;                  /* Empêche le menu de s'étirer sur toute la largeur */
+  }
+
+}
+
+
+
+
+
+/* Section 1 BANNIÈRES */
+/* Mise en forme commune à toutes les bannières */
+.banniere {
+    min-height: 50vh;
+    padding: 40px 0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+}
+
+
+/* Images différentes selon la page */
+.banniere-accueil {
+    background-image: url("../images/voitureaccueil.jpeg");
+}
+
+.banniere-produit {
+    background-image: url("../images/boitier.jpg");
+}
+
+/* Image page Équipe */
+.banniere-equipe {
+    background-image: url("../images/equipe.png");
+}
+
+/* Image page Témoignages */
+.banniere-temoignages {
+    background-image: url("../images/voitureavis.png");
+}
+
+.banniere-faq {
+    background-image: url("../images/fondfaq.png");
+}
+
+
+/* Arrondit les coins des bannières et masque les débordements */
+.arrondi {
+    border-radius: 4rem;
+    margin: 2em clamp(1rem, 5vw, 8em) 0;
+    overflow: hidden;
+}
+
+
+
+/* section 1 banniere : Bloc de texte commun */
+/* Définit la largeur maximale du bloc de texte des bannières */
+.texte-banniere {
+    width: 100%;
+    max-width: 650px;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+
+/* Adapte la taille du titre principal à la largeur de l'écran */
+.texte-banniere h1 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    line-height: 1.15;
+    margin-bottom: 12px;
+    font-family: Orbitron, sans-serif;
+    overflow-wrap: break-word;
+}
+
+
+/* Adapte la taille du slogan à la largeur de l'écran */
+.slogan {
+    font-size: clamp(1.15rem, 2.5vw, 1.5rem);
+    line-height: 1.3;
+    margin-bottom: 18px;
+    font-family: Montserrat, sans-serif;
+    overflow-wrap: break-word;
+}
+
+
+/* Limite la largeur et améliore la lisibilité du texte de présentation */
+.description-banniere {
+    max-width: 550px;
+    font-size: clamp(1rem, 1.5vw, 1.125rem);
+    line-height: 1.6;
+    margin: 0 0 20px;
+    overflow-wrap: break-word;
+}
+
+
+/* Met en forme la phrase complémentaire de la page Équipe */
+.accroche-banniere {
+    font-size: clamp(0.95rem, 1.4vw, 1rem);
+    line-height: 1.5;
+    margin-top: 0;
+    overflow-wrap: break-word;
+}
+
+
+
+/* ADAPTATION AUX TÉLÉPHONES*/
+@media (max-width: 767.98px) {
+
+    /* La bannière peut grandir si le texte prend plus de place */
+    .banniere {
+        min-height: 55vh;
+        height: auto;
+        padding: 32px 0;
+    }
+
+    /* Réduit les espaces sur les petits écrans */
+    .texte-banniere {
+        max-width: 100%;
+    }
+
+    /* Évite les marges trop importantes sur téléphone */
+    .texte-banniere h1 {
+        margin-bottom: 10px;
+    }
+
+    .slogan {
+        margin-bottom: 14px;
+    }
+
+    /* Le bouton reste dans la largeur disponible */
+    .banniere .btn {
+        max-width: 100%;
+        white-space: normal;
+    }
+}
+
+
+
+
+
+
+/* Page d'accueil */
+/* STYLE COMMUN AUX TROIS BOUTONS */
+/* Harmonise l'apparence des boutons Technologie, Achat et Retour en haut */
+.btn-technologie,
+.btn-achat,
+.btn-retour-haut {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5;
+
+    color: white;
+    background-color: #A020F0;
+    border: 1px solid #A020F0;
+    border-radius: 2rem;
+
+    padding: 0.8rem 1.8rem;
+    text-decoration: none;
+
+
+/* Rend progressifs les changements de couleur et de position */
+    transition: background-color 0.3s ease,
+                transform 0.3s ease;
+}
+
+
+/* EFFET AU SURVOL DES TROIS BOUTONS */
+.btn-technologie:hover,
+.btn-achat:hover,
+.btn-retour-haut:hover {
+    color: white;
+    background-color: #8018C0;
+    border-color: #8018C0;
+    transform: translateY(-2px);
+}
+
+
+/* ICÔNE DU PANIER */
+.btn-achat i {
+    font-size: 1.2rem;
+}
+
+
+/* BOUTON RETOUR EN HAUT */
+
+.btn-retour-haut {
+    padding: 0.6rem 1.4rem;
+}
+
+
+
+/* Section 2 Page acceuil : Les avantages de Car-éléon */
+/* Fond de la section */
+.troisavantages,
+.couleurs-acceuil,
+.notre-vision {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+
+/* TITRES DES SECTIONS */
+.troisavantages h2,
+.couleurs-acceuil h2,
+.notre-vision h2 {
+    color: #A020F0;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+
+/* SECTIONS 2 ET 3 */
+.troisavantages,
+.couleurs-acceuil {
+    background-color: white;
+}
+
+
+/* SECTION 2 : AVANTAGES */
+.troisavantages {
+    padding: 60px 20px;
+}
+
+.carte-avantage {
+    background-color: #F4F7FA;
+    color: #24364B;
+    padding: 40px 25px;
+    min-height: 250px;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carte-avantage img {
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+}
+
+.carte-avantage p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+
+@media (hover: hover) {
+    .carte-avantage:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
+    }
+}
+
+
+/* SECTION 3 page accueil : COULEURS */
+.couleurs-acceuil {
+    padding: 60px 20px;
+}
+
+.couleurs-acceuil h2 {
+    margin-bottom: 15px;
+}
+
+.couleurs-acceuil p {
+    color: #24364B;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.couleurs-acceuil .alert {
+    max-width: 600px;
+    border: 2px solid #A020F0;
+    border-radius: 12px;
+    background-color: #f8f0ff;
+    color: #24364B;
+}
+
+.diaporama-voiture {
+    display: block;
+    width: 50%;
+    height: 250px;
+    object-fit: contain;
+    margin: 0 auto;
+    cursor: pointer;
+    border-radius: 20px; /* Coins arrondis */
+    transition: transform 0.3s ease;
+}
+
+@media (hover: hover) {
+    .diaporama-voiture:hover {
+        transform: scale(1.05);
+    }
+}
+
+
+/* SECTION 4 page acceuil : NOTRE VISION */
+.notre-vision {
+    background: linear-gradient(135deg, #F5F5F8, #E8E8EF);
+    color: #24364B;
+    padding: 60px 20px;
+    margin: 0;
+}
+
+.notre-vision .surtitre-vision {
+    color: #A020F0;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.notre-vision p:not(.surtitre-vision) {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.image-vision {
+    display: block;
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* BOUTON */
+.btn-vision {
+    background-color: #A020F0;
+    color: white;
+    border: 1px solid #A020F0;
+    border-radius: 8px;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-vision:hover {
+    background-color: #8018C0;
+    border-color: #8018C0;
+    color: white;
+}
+
+/* ADAPTATION AUX TÉLÉPHONES */
+@media (max-width: 767.98px) {
+    .troisavantages,
+    .couleurs-acceuil,
+    .notre-vision {
+        padding: 40px 15px;
+    }
+
+    .troisavantages h2,
+    .couleurs-acceuil h2,
+    .notre-vision h2 {
+        font-size: 28px;
+    }
+
+    .carte-avantage {
+        min-height: 200px;
+        padding: 30px 20px;
+    }
+
+    .carte-avantage img {
+        width: 65px;
+        height: 65px;
+    }
+
+    .carte-avantage p {
+        font-size: 17px;
+    }
+
+    .couleurs-acceuil p,
+    .notre-vision p:not(.surtitre-vision) {
+        font-size: 16px;
+    }
+
+    .diaporama-voiture {
+        width: 90%;
+        height: 180px;
+    }
+
+    .notre-vision .surtitre-vision {
+        font-size: 16px;
+    }
+
+    .image-vision {
+        max-height: 280px;
+    }
+}
+
+
+
+
+
+
+/* PAGE PRODUIT */
+/* Section 2 page produit : Comment ça fonctionne ? */
+/* Fond blanc de la section */
+.fonctionnement {
+    background-color: white;
+}
+
+/* Style du titre */
+.fonctionnement h2 {
+    font-size: 1.3rem; /* Taille du titre */
+    font-weight: 700; /* Titre en gras */
+    color: #0f172a; /* Couleur bleu foncé */
+}
+
+/* Style du petit texte d'introduction */
+.intro-section {
+    font-size: 0.9rem; /* Texte assez petit */
+    color: #64748b; /* Gris bleuté */
+    line-height: 1.5; /* Espace entre les lignes */
+}
+
+/* Taille des images des étapes */
+.fonctionnement .etape img {
+    width: 50px; /* Largeur de l'image */
+    height: 50px; /* Hauteur de l'image */
+    border-radius: 50%;
+    object-fit: cover;
+     /* Garde l'image sans la déformer */
+}
+
+/* Style des titres des étapes */
+.fonctionnement .etape h3 {
+    font-size: 0.95rem; /* Taille du sous-titre */
+    font-weight: 700; /* Texte en gras */
+    color: #0f172a; /* Bleu foncé */
+}
+
+/* Style des explications sous les étapes */
+.fonctionnement .etape p {
+    font-size: 0.8rem; /* Taille du texte */
+    color: #64748b; /* Gris bleuté */
+    line-height: 1.5; /* Rend le texte plus facile à lire */
+}
+
+/* Image de l'application Car-éléon */
+img.image-interactive {
+    display: block;
+    width: 100% !important;
+    max-width: 900px !important;
+    height: auto !important;
+    margin: 15px auto;
+    border-radius: 10px !important;
+    object-fit: contain;
+
+    /* Rend la rotation et l'ombre progressives */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+    /* Indique que l'image est interactive */
+    cursor: pointer;
+
+    /* Ombre discrète au repos */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+}
+
+/* Rotation et ombre lorsque la souris passe sur l'image */
+img.image-interactive.rotation {
+    transform: rotate(3deg);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+
+
+/* Section 3 page produit : Les couleurs disponibles */
+/* Fond et bordure de la section */
+.couleurs-produit {
+    background-color: white; /* Fond blanc */
+    border-bottom: 1px solid #e2e8f0; /* Fine ligne en bas */
+}
+
+/* Style du titre */
+.couleurs-produit h2 {
+    font-size: 1.3rem; /* Taille du titre */
+    font-weight: 700; /* Titre en gras */
+    color: #0f172a; /* Bleu foncé */
+}
+
+/* Affichage des images des couleurs */
+.couleurs-produit img {
+    width: 64px; /* Largeur de l'image */
+    height: 64px; /* Hauteur de l'image */
+    border-radius: 50%; /* Donne une forme ronde */
+    object-fit: cover; /* Remplit le cercle sans déformer */
+}
+
+/* Style des noms des couleurs */
+.couleurs-produit p {
+    font-size: 0.8rem; /* Taille du texte */
+    font-weight: 600; /* Texte légèrement en gras */
+    color: #334155; /* Gris foncé */
+}
+
+
+/* Section 4 page produit : Une expérience automobile unique */
+/* Fond légèrement gris pour cette section */
+.avantages {
+    background-color: #f8fafc;
+}
+
+/* Apparence des trois cartes */
+.avantages .carte-avantage {
+    background-color: white; /* Fond blanc */
+    border-radius: 10px; /* Coins arrondis */
+}
+
+/* Style des icônes */
+.icone-avantage {
+    font-size: 1.8rem; /* Taille des icônes */
+    color: #0f5786; /* Couleur bleue */
+}
+
+/* Style des titres des cartes */
+.avantages .carte-avantage h3 {
+    font-size: 1.2rem; /* Taille du titre */
+    font-weight: bold; /* Titre en gras */
+    color: #171717; /* Presque noir */
+}
+
+/* Style des textes des cartes */
+.avantages .carte-avantage p {
+    font-size: 0.95rem; /* Taille du texte */
+    color: #555; /* Gris foncé */
+    line-height: 1.6; /* Espace entre les lignes */
+}
+
+
+/* Adaptation aux téléphones */
+@media (max-width: 576px) {
+    img.image-application {
+        max-width: 100%;
+        margin: 15px auto;
+    }
+}
+
+
+/* Section 5 page produit : Vidéo de présentation */
+/* Fond blanc derrière la vidéo */
+.video-produit {
+    background-color: white;
+}/* Footer commun à toutes les pages */
+.footer {
+    font-size: 14px;
+}
+
+
+
+/* PAGE EQUIPE  */
+/* Section 2 : menbre des équipes */
+/* Sélectionne les photos des membres */
+.card-img-top {
+    height: 250px; /* Définit la hauteur des photos à 250 pixels */
+    object-fit: cover; /* Remplit l'espace sans déformer les photos */
+}
+
+/* Sélectionne les titres des cartes */
+.card-title {
+    font-size: 21px; /* Définit la taille du texte à 21 pixels */
+    color: #0f1b2d; /* Définit la couleur du titre */
+    margin-bottom: 8px; /* Ajoute un espace sous le titre */
+}
+
+
+/* Sélectionne les rôles des membres */
+.role {
+    color: #A020F0; /* Donne une couleur orange au rôle */
+    font-weight: bold; /* Met le texte en gras */
+    margin-bottom: 12px; /* Ajoute un espace sous le rôle */
+}
+
+
+/* Sélectionne les descriptions des membres */
+.card-text {
+    font-size: 14px; /* Définit la taille du texte à 14 pixels */
+    line-height: 1.6; /* Augmente l'espace entre les lignes */
+}
+
+
+/* Ajoute une animation aux cartes */
+.card {
+    transition: transform 0.3s, box-shadow 0.3s; /* Rend les changements progressifs pendant 0,3 seconde */
+}
+
+
+/* Définit l'apparence des cartes au passage de la souris */
+.card:hover {
+    transform: translateY(-5px); /* Déplace légèrement la carte vers le haut */
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15) !important; /* Ajoute une ombre autour de la carte */
+}
+
+
+/* Sélectionne les images des icônes e-mail dans les cartes */
+.zone-email {
+    display: flex; /* Utilise Flexbox pour organiser le contenu */
+    justify-content: center; /* Centre le bouton horizontalement */
+    align-items: center; /* Centre le bouton verticalement */
+    margin-top: 20px; /* Ajoute un espace au-dessus du bouton */
+}
+
+/* Style du bouton enveloppe */
+.bouton-email {
+    display: inline-flex; /* Permet de centrer l'icône dans le bouton */
+    justify-content: center; /* Centre l'icône horizontalement */
+    align-items: center; /* Centre l'icône verticalement */
+
+    width: 52px; /* Définit la largeur du bouton */
+    height: 52px; /* Définit la hauteur du bouton */
+
+    background-color: #A020F0; /* Définit la couleur violette du fond */
+    color: #ffffff; /* Définit la couleur blanche de l'icône */
+
+    border: 2px solid #A020F0; /* Ajoute une bordure violette */
+    border-radius: 50%; /* Donne une forme circulaire au bouton */
+
+    font-size: 25px; /* Définit la taille de l'icône */
+    text-decoration: none; /* Supprime le soulignement du lien */
+
+    transition: all 0.3s ease; /* Rend les changements plus fluides */
+}
+
+/* Effet appliqué lorsque la souris passe sur le bouton */
+.bouton-email:hover {
+    background-color: #8018C0; /* Assombrit le fond */
+    border-color: #8018C0; /* Assombrit la bordure */
+    color: #ffffff; /* Garde l'icône en blanc */
+
+    transform: translateY(-4px) scale(1.08); /* Déplace légèrement le bouton vers le haut et l'agrandit */
+
+    box-shadow: 0 5px 15px rgba(160, 32, 240, 0.35); /* Ajoute une ombre violette */
+}
+
+/* Style du bouton en mode clair */
+body:not(.dark-mode) .bouton-email {
+    background-color: #A020F0; /* Garde le fond violet */
+    color: #ffffff; /* Garde l'icône blanche */
+}
+
+/* Style du bouton en mode sombre */
+body.dark-mode .bouton-email {
+    background-color: #A020F0; /* Définit le fond violet */
+    color: #ffffff; /* Définit l'icône blanche */
+    border-color: #A020F0; /* Garde la bordure violette */
+
+    box-shadow: 0 0 12px rgba(160, 32, 240, 0.25); /* Ajoute une légère lueur violette */
+}
+
+/* Effet au survol en mode sombre */
+body.dark-mode .bouton-email:hover {
+    background-color: #8018C0; /* Assombrit le fond */
+    color: #ffffff; /* Garde l'icône blanche */
+    box-shadow: 0 0 18px rgba(160, 32, 240, 0.55); /* Renforce la lueur violette */
+}
+
+/* Adaptation du bouton aux petits écrans (téléphones) */
+@media (max-width: 576px) {
+    .bouton-email {
+        width: 48px; /* Réduit la largeur du bouton */
+        height: 48px; /* Réduit la hauteur du bouton */
+        font-size: 23px; /* Réduit la taille de l'icône */
+    }
+}
+/* PERSONNALISATION DE NOTRE LOCALISATION */
+.adresse {
+    width: 100%; /* La section prend toute la largeur disponible */
+    text-align: center; /* Centre le contenu horizontalement */
+}
+
+/* TITRE */
+.adresse h2 {
+    font-size: 30px; /* Définit la taille du titre */
+    font-weight: bold; /* Met le titre en gras */
+    color: #000; /* Donne une couleur noire au titre */
+    margin-bottom: 25px; /* Ajoute un espace sous le titre */
+}
+
+/* CARTE GOOGLE MAPS */
+.adresse .map-container {
+    width: 80%; /* La carte occupe 80% de la largeur */
+    height: 350px; /* Définit la hauteur de la carte */
+    margin: 0 auto; /* Centre la carte */
+    border-radius: 30px; /* Arrondit les coins */
+    overflow: hidden; /* Cache ce qui dépasse */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Ajoute une ombre */
+    transition: box-shadow 0.4s ease, transform 0.4s ease; /* Anime les effets progressivement */
+}
+
+/* EFFET AU SURVOL EN MODE CLAIR */
+.adresse .map-container:hover {
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.6); /* Ajoute une ombre bleue */
+    transform: scale(1.01); /* Agrandit légèrement la carte */
+}
+
+/* MODE SOMBRE */
+body.dark-mode .adresse .map-container {
+    box-shadow:
+        0 0 15px rgba(160, 32, 240, 0.7), /* Première ombre violette */
+        0 0 30px rgba(160, 32, 240, 0.5), /* Deuxième ombre violette */
+        0 0 45px rgba(160, 32, 240, 0.3); /* Troisième ombre violette */
+}
+
+/* EFFET SOMBRE SUR GOOGLE MAPS */
+body.dark-mode .adresse iframe {
+    filter: invert(90%) hue-rotate(180deg); /* Inverse les couleurs pour créer un effet sombre */
+}
+
+/* IFRAME */
+.adresse iframe {
+    width: 100%; /* Prend toute la largeur du conteneur */
+    height: 100%; /* Prend toute la hauteur du conteneur */
+    border: none; /* Supprime la bordure */
+    display: block; /* Affiche l'iframe en bloc */
+}
+
+/* RESPONSIVE : ADAPTATION AUX TÉLÉPHONES */
+@media (max-width: 600px) {
+    .adresse .map-container {
+        width: 100%; /* Prend toute la largeur sur mobile */
+        height: 250px; /* Réduit la hauteur */
+        border-radius: 25px; /* Réduit l'arrondissement */
+    }
+
+    .adresse h2 {
+        font-size: 24px; /* Réduit la taille du titre */
+    }
+}
+
+/* PAGE FAQ */
+/* Section 2 page faq : Question-réponse */
+/* Personnalisation lorsque la question est ouverte */
+#faqAccordion .accordion-button:not(.collapsed) {
+  background-color: #f3e5ff; /* Applique un fond violet clair */
+  color: #A020F0; /* Affiche le texte en violet */
+}
+
+/* Personnalisation lorsqu'il est sélectionné */
+#faqAccordion .accordion-button:focus {
+  border-color: #A020F0; /* la bordure en violet */
+  box-shadow: 0 0 0 0.2rem rgba(160, 32, 240, 0.2);   /* Ajoute un halo violet transparent autour du bouton */
+
+}
+
+/* Espacement et arrondi des blocs de questions */
+#faqAccordion .accordion-item {
+  margin-bottom: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+
+/* Bouton de contact */
+.btn-dark {
+  background-color: #A020F0;
+  border-color: #A020F0;
+}
+
+.btn-dark:hover {
+  background-color: #8015c0;
+  border-color: #8015c0;
+}
+
+
+
+
+
+/* PAGE CONTACT */
+/* Couleur des champs lorsqu'on clique dessus */
+#sectionContact .form-control:focus {
+    border-color: #A020F0;
+    box-shadow: 0 0 0 0.25rem rgba(160, 32, 240, 0.25);
+}
+
+/* Image du boîtier Car-éléon dans la partie achat */
+.image-boitier {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 20px; /* Coins arrondis */
+    margin: 15px auto;
+}
+
+/* Titres de la page Contact */
+/* Titres violets de la page Contact */
+#titre-contact,
+#titre-formulaire,
+.carte-contact h3,
+.carte-produit h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: #A020F0;
+    font-weight: 700;
+}
+
+/* Slogan dans la bannière */
+#titre-contact + .slogan {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+/* Titres des sections : taille adaptée */
+#titre-formulaire {
+    margin-bottom: 15px;
+}
+
+/* Petit effet au survol des titres de cartes, facultatif */
+.carte-contact h3,
+.carte-produit h3 {
+    transition: color 0.3s ease;
+}
+
+
+
+
+
+/* PAGE Témoignages */ 
+/* Section qui contient les avis */
+.section-avis {
+    background-color: #f5f5f5;
+    padding: 40px 5%;
+}
+
+/* Organisation des six cartes : 3 colonnes */
+.grille-avis {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Apparence des cartes de témoignages */
+.carte-avis {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+    transition: transform 0.3s ease;
+}
+
+/* Effet au survol */
+.carte-avis:hover {
+    transform: scale(1.05);
+}
+
+/* Ligne contenant la photo et les étoiles */
+.entete-avis {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+/* Photo ronde du client */
+.photo-client {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Image des cinq étoiles */
+.etoiles {
+    width: 110px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Commentaire du client */
+.carte-avis .commentaire {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #444444;
+    margin-bottom: 15px;
+}
+
+/* Nom du client */
+.carte-avis .nom-client {
+    font-weight: bold;
+    font-size: 15px;
+    margin-bottom: 4px;
+}
+
+/* Date de l'avis */
+.carte-avis .date-client {
+    font-size: 12px;
+    color: #777777;
+}
+
